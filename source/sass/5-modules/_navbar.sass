@@ -1,5 +1,5 @@
 nav
-  height: 100px
+  height: 80px
   background-color: transparentize($black-color, 0.8)
   .row
     height: 100%
@@ -7,18 +7,36 @@ nav
     +flex(row)
     justify-content: flex-start
   .logo
-    height: 75px
-    max-height: 75px
+    height: 50px
+    max-height: 50px
     width: auto
+    cursor: pointer
+    &:hover
+      opacity: 0.95
     svg
       height: 100%
-      max-height: 75px
+      max-height: 50px
       width: auto
   .nav-main
     margin-left: auto
     list-style: none
     .nav-item
       display: inline-block
+      padding: 0 15px
+      margin-right: 5px
+      &:last-child
+        margin-right: 0px
+      .nav-links
+        color: $white-color
+        text-decoration: none
+        text-transform: uppercase
+        letter-spacing: 1px
+        font-weight: bold
+        padding-bottom: 10px
+        +transition(color, 0.15s, ease-in)
+        &:hover
+          color: darken($white-color, 10%)
+
 
 #resize
   display: none

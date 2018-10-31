@@ -77,11 +77,14 @@ gulp.task('minify-css', () => {
 //sass
 gulp.task('sass', function() {
   return gulp.src(sassSource)
-    .pipe(plumber())
     .pipe(sass({
       outputStyle: 'compressed'
     }))
+    .pipe(plumber())
     .pipe(concat('style.css'))
+    .pipe(autoprefixer({
+      browsers: ["cover 99.5%"]
+    }))
     .pipe(gulp.dest(cssDestination))
 })
 
