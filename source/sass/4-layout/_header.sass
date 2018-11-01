@@ -1,15 +1,22 @@
 header
   height: 100vh
   margin-top: -80px
+  color: $white-color
   +flex(row)
   text-align: center
-  background-color: #000
-  color: $white-color
   cursor: default
+  background-image: url($hero-bg)
+  +background-center
+  +text-shadow(0, 3px, 6px, rgba(0,0,0,0.4))
+
+  h1, h4
+    color: $white-color
 
   h4
-    text-transform: uppercase
+    color: $white-color!important
     margin-top: -20px
+    &::after
+      display: none  
   p
     width: 50%
     margin: 40px auto

@@ -1,19 +1,14 @@
+- var navLinks = ['Home', 'About Us', 'Projects', 'Team', 'Testimonials'];
+
 nav
   .row
     .logo
       include icons/logo.html
   
     ul.nav-main
-      li.nav-item
-        a.nav-links(href="#") Home
-      li.nav-item
-        a.nav-links(href="#") About Us
-      li.nav-item
-        a.nav-links(href="#") Projects
-      li.nav-item
-        a.nav-links(href="#") Team
-      li.nav-item
-        a.nav-links(href="#") Testimonials
+      each val in navLinks
+        li.nav-item
+          a.nav-links(href="#")= val
     
     #toggle
       .span#one
@@ -22,13 +17,6 @@ nav
 
 #resize
   ul.menu
-    li.nav-item
-      a.nav-links(href="#") Home
-    li.nav-item
-      a.nav-links(href="#") About Us
-    li.nav-item
-      a.nav-links(href="#") Projects
-    li.nav-item
-      a.nav-links(href="#") Team
-    li.nav-item
-      a.nav-links(href="#") Testimonials
+    each val in navLinks
+      li.nav-item
+        a.nav-links(href="#")= val
