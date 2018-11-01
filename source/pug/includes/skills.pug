@@ -1,0 +1,13 @@
+//- Add an skill in skills variable and it will automatically add the element to the HTML
+- var skills = ['Leadership', 'Inovation And Creativity', 'Management', 'Resilience'];
+
+//- Add an value of how much you want to fill up the skill-bar in skillFillup variables
+- var skillFillup = ['90', '80', '95', '85'];
+
+section.skill-wrapper.dark-section
+  .row
+    each val, index in skills
+      .col.span-1-of-2
+        .skill-container
+          .skill-fill(data-fill= skillFillup[index])
+        p= val + " - " + skillFillup[index] + " %"

@@ -1,0 +1,1 @@
+$(document).ready(function(){$(".skill-fill").each(function(t){var i=$(this).attr("data-fill");$(this).css("width",i+"%"),$(this).attr("title",i)})});
