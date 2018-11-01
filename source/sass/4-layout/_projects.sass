@@ -1,0 +1,34 @@
+.project-container
+  border: 3px solid transparentize($secondary-color, 0.1)
+  border-radius: 10px
+  overflow: hidden
+  padding: 0
+  margin-bottom: 50px
+  .col
+    margin: 0
+  .span-1-of-3
+    height: 300px
+    overflow: hidden
+    img
+      transform: scale(1.1)
+      height: 100%
+      width: 100%
+      object-fit: cover
+  .span-2-of-3
+    box-sizing: border-box
+    padding-left: 50px
+    height: 300px
+    +flex(row)
+    section
+      padding: 0
+
+    .project-status
+      color: $primary-color
+      text-transform: uppercase
+      font-family: $josefin-font-family
+      font-weight: bold
+      letter-spacing: 1px
+      font-size: 1.1em
+
+.upcoming-row
+  margin-top: 100px
