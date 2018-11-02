@@ -21,6 +21,8 @@ var htmlSource = 'source/*.html',
     jsVendorSource = 'source/js/vendors/*.js',
     jsAppSource = 'source/js/*.js',
     jsDestination = 'build/assets/js/',
+    jsonSource = 'source/js/json/*.json',
+    jsonDestination = 'build/assets/js/json/',
     imgSource = 'source/img/*',
     imgDestination = 'build/assets/img/',
     faviconSource = 'source/favicon/*',
@@ -101,6 +103,12 @@ gulp.task('vendorjs', function (cb) {
   );
 });
 
+// JSON task
+gulp.task('json', function() {
+  gulp.src(jsonSource)
+    .pipe(gulp.dest(jsonDestination));
+});
+
 //app js
 gulp.task('appjs', function (cb) {
   pump([
@@ -145,6 +153,7 @@ gulp.task('watch', function () {
   gulp.watch(cssVendorSource, ['minify-css']);
   gulp.watch(jsVendorSource, ['vendorjs']);
   gulp.watch(jsAppSource, ['appjs']);
+  gulp.watch(jsonSource, ['json']);
   gulp.watch(imgSource, ['img-minify']);
   gulp.watch(faviconSource, ['favicon']);
   gulp.watch(sassSource, ['sass']);
@@ -152,6 +161,7 @@ gulp.task('watch', function () {
     'build/*.html',
     'build/assets/css/*.css',
     'build/assets/js/*.js',
+    'build/assets/js/json/*.json',
     'build/assets/img/*',
     'build/assets/favicon/*',
   ]).on('change', browserSync.reload);
@@ -159,7 +169,7 @@ gulp.task('watch', function () {
 
 
 // Gulp Default Task
-gulp.task('default', ['jekyll', 'pug', 'pugCopy', 'html', 'minify-css', 'vendorjs', 'appjs', 'img-minify', 'favicon', 'sass', 'watch']);
+gulp.task('default', ['jekyll', 'pug', 'pugCopy', 'html', 'minify-css', 'json',  'vendorjs', 'appjs', 'img-minify', 'favicon', 'sass', 'watch']);
 
 
 //To use Jekyll,
