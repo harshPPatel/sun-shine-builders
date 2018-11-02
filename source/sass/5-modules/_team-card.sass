@@ -1,0 +1,49 @@
+.team-card
+  text-align: center
+  border-radius: 15px
+  cursor: default
+
+  img
+    margin-bottom: 40px
+    height: 150px
+    width: 150px
+    border-radius: 50%
+
+  h4
+    &::after
+      display: none
+
+  .post
+    font-weight: bold
+    font-size: 1.2em
+    text-transform: uppercase
+    color: $primary-color
+    letter-spacing: 2px
+
+  .social-links-wraapper
+    margin: 30px 0
+    padding-bottom: 30px
+    list-style: none
+    li
+      display: inline-block
+      width: 50%
+      margin-bottom: 15px
+
+  .social-links
+    +flex(row)
+    font-family: $josefin-font-family
+    text-transform: uppercase
+    font-weight: bold
+    font-size: 0.9em
+    text-decoration: none
+    color: $secondary-color
+    +transition(all, 0.2s, ease)
+    &:hover
+      opacity: 0.9
+    svg
+      width: 20px
+      height: 20px
+      margin-right: 10px
+      position: relative
+      z-index: -1
+      margin-top: -5px

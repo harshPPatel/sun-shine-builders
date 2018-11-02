@@ -1,0 +1,35 @@
+- var memberName = ['Tom Methhews', 'Jona Mendis', 'Rony Wisely'];
+- var memberPost = ['Civil Engineer', 'Civil Designer', 'Site Manager'];
+- var socialName = ['facebook', google, instagram, linkedIn];
+
+//- each val, index in skills
+
+section.team-section
+  .row
+    h2 Our Team
+  
+  .row
+    each val, index in memberName
+      .col.span-1-of-3
+        .team-card
+          img(src="/assets/img/team-" + (index + 1) + ".jpg" alt= memberName[index])
+          h4= memberName[index]
+          p.post= memberPost[index]
+          
+          ul.social-links-wraapper
+            li
+              a(href="").social-links
+                include icons/facebook.html
+                | Facebook
+            li
+              a(href="").social-links
+                include icons/google.html
+                | Google
+            li
+              a(href="").social-links
+                include icons/instagram.html
+                | Instagram
+            li
+              a(href="").social-links
+                include icons/linkedIn.html
+                | Linked In
