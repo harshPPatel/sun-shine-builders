@@ -1,0 +1,11 @@
+- var clients = ['afcons', 'il&fs', 'l&t', 'lanco', 'reliance', 'simplex']
+
+section.clients-section
+  .row
+    h2 Our Clients
+  
+  .row
+    each val in clients
+      .col.span-1-of-6.img-wrapper
+        a(href="")
+          img(src="/assets/img/" + val + "-logo.png" alt = val)
