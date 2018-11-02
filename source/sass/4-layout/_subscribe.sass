@@ -1,0 +1,42 @@
+.subscribe-section
+  padding: 60px 0
+  text-align: center
+  letter-spacing: 2px
+  h2
+    &::after
+      display: none
+
+  .kicker
+    color: $secondary-color
+    text-transform: uppercase
+    opacity: 0.8
+    font:
+      size: 1.2em
+      family: $josefin-font-family
+      weight: bold
+
+  .subscribe-form
+    margin-top: 20px
+
+  input[type="email"],
+  input[type="submit"]
+    box-sizing: border-box
+    outline: none
+    border: 2px solid $white-color
+    border-radius: 100px
+    height: 50px
+    text-align: center
+    +transition(all, 0.3s, ease)
+    &:focus,
+    &:hover
+      +box-shadow(1px, 1px, 10px, 0, $secondary-color)
+
+  input[type="email"]
+    color: $secondary-color
+    font-size: 1.1em
+    width: 40%
+    margin-right: 40px
+
+  input[type="submit"].btn
+    width: 150px
+    background-color: $secondary-color
