@@ -57,6 +57,12 @@ function onLoadFunctions () {
 }
 
 /**
+ *  Start Animation On Scroll Function
+ */
+
+AOS.init();
+
+/**
  *  Runs onLoadFunctions while page loads
  */
 window.onload = onLoadFunctions;
