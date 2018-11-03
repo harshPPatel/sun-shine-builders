@@ -1,14 +1,22 @@
 html
   font-family: $mina-font-family
   font-size: 16px
+  overflow-x: hidden
+  @media(max-width: 775px)
+    font-size: 14px
+
+body
+  overflow-x: hidden
 
 .row
-  width: 80%
+  width: 90%
   max-width: 1040px
   margin: 0 auto
 
 section
   padding: 100px 0
+  @media(max-width: 960px)
+    padding: 50px 0
 
 .dark-section
   background-color: $primary-color

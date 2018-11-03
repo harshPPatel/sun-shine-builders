@@ -45,6 +45,20 @@
   display: flex
   align-items: center
   justify-content: center
+  @media(max-width: 775px)
+    flex-direction: column
+    .mobile-content,
+    .mobile-list
+      width: 100%
+    .testimonial-content
+      display: flex
+      align-items: center
+      padding: 50px
+      article
+        padding: 0
+      img
+        height: 125px
+        width: 125px
 
 //Testimonal List styling
 .testimonial-list
@@ -61,6 +75,10 @@
     border-radius: 50%
     cursor: pointer
     border: solid 4px transparent
+  @media(max-width: 775px)
+    img
+      height: 100px
+      width: 100px
 
 .active
   img

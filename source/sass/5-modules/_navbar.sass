@@ -8,6 +8,8 @@ nav
     width: 100%
     +flex(row)
     justify-content: flex-start
+    @media(max-width: 1140px)
+      padding: 0 20px
 .logo
   height: 50px
   max-height: 50px
@@ -22,6 +24,10 @@ nav
 .nav-main
   margin-left: auto
   list-style: none
+  @media(max-width: 1140px)
+    padding-right: 30px
+  @media(max-width: 775px)
+    display: none
   .nav-item
     display: inline-block
     padding: 0 15px

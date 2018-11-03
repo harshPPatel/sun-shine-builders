@@ -4,11 +4,15 @@
   overflow: hidden
   padding: 0
   margin-bottom: 50px
+  @media(max-width: 775px)
+    margin-bottom: 50px
   .col
     margin: 0
   .span-1-of-3
     height: 300px
     overflow: hidden
+    @media(max-width: 775px)
+      height: 250px
     img
       transform: scale(1.1)
       height: 100%
@@ -18,6 +22,8 @@
     box-sizing: border-box
     padding-left: 50px
     height: 300px
+    @media(max-width: 775px)
+      height: 250px
     +flex(row)
     section
       padding: 0
@@ -32,3 +38,5 @@
 
 .upcoming-row
   margin-top: 100px
+  @media(max-width: 775px)
+    margin-top: 50px

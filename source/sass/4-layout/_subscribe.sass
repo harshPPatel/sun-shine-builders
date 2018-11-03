@@ -27,6 +27,8 @@
     height: 50px
     text-align: center
     +transition(all, 0.3s, ease)
+    @media(max-width: 775px)
+      height: 40px
     &:focus,
     &:hover
       +box-shadow(1px, 1px, 10px, 0, $secondary-color)
@@ -36,6 +38,11 @@
     font-size: 1.1em
     width: 40%
     margin-right: 40px
+    @media(max-width: 960px)
+      width: 60%
+      margin-right: 30px
+    @media(max-width: 775px)
+      width: 50%
 
   input[type="submit"].btn
     width: 150px

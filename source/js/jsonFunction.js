@@ -41,8 +41,8 @@ function printTestimonials(object, i) {
   var div = document.getElementById('--js-testimonial-content');
   var printLayout = '<img src=\" /assets/img/testimonial-' + (i + 1) + '.jpg\"' +
   'alt=\"' + object[i].name + '"/>' +
-  '<blockquote>' + object[i].testimonial + '</blockquote><p class=\"name\">' +
-  object[i].name + '</p>'
+  '<article><blockquote>' + object[i].testimonial + '</blockquote><p class=\"name\">' +
+  object[i].name + '</p></article>'
   div.innerHTML = printLayout;
 }
 
