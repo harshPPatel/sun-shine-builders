@@ -1,0 +1,66 @@
+.testimonial-section
+  position: relative
+  .instruction
+    position: absolute
+    right: 20px
+    bottom: 20px
+    color: $white-color
+    font-style: italic
+  h2
+    color: $white-color
+    &::after
+      background-color: $white-color
+
+//Testimonial Content Styles
+.testimonial-content
+  text-align: center
+  background-color: $white-color
+  color: $secondary-color
+  padding: 50px 10px
+  border-radius: 15px
+  cursor: default
+  img
+    border-radius: 50%
+    height: 150px
+    width: 150px
+
+  blockquote
+    &::before,
+    &::after
+      content: "\""
+      margin: 5px
+      font-size: 1.9em
+      color: $primary-color
+      line-height: 100%
+  .name
+    line-height: 1.5em
+    &::before
+      content: "- "
+      font-size: 1.5em
+      color: $primary-color
+
+.testimonial-row
+  height: auto
+  display: flex
+  align-items: center
+  justify-content: center
+
+//Testimonal List styling
+.testimonial-list
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-wrap: wrap
+  list-style: none
+  li
+    box-sizing: border-box
+    padding: 10px
+  img
+    width: 100%
+    border-radius: 50%
+    cursor: pointer
+    border: solid 4px transparent
+
+.active
+  img
+    border: solid 4px $secondary-color

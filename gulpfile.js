@@ -114,6 +114,7 @@ gulp.task('appjs', function (cb) {
   pump([
         gulp.src(jsAppSource),
         plumber(),
+        concat('app.js'),
         uglify(),
         gulp.dest(jsDestination)
       ],

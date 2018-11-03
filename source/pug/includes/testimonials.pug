@@ -1,0 +1,28 @@
+- var testimonialName = ['Hilda J. Pack', 'Ronald S. Alvarado', 'Ida G. Edwards', 'Ivan A. Gonzalez', 'Renee S. Rhoads', 'Manuel D. Dailey']
+
+section.testimonial-section.dark-section
+  p.instruction *Click Face to show Testimonial
+  .row
+    h2 Testimonials
+  
+  .row.testimonial-row
+    .span-1-of-2
+      article.testimonial-content#--js-testimonial-content
+    
+    .span-1-of-2
+      ul.testimonial-list
+        each val, index in testimonialName
+          li.span-1-of-3.--js-testimonial-img
+            img(src="/assets/img/testimonial-" + (index + 1) + ".jpg" alt = val)
+        //- li.span-1-of-3.--js-testimonial-img.active
+        //-   img(src="/assets/img/testimonial-1.jpg" alt = "Mina Hardwards")
+        //- li.span-1-of-3.--js-testimonial-img
+        //-   img(src="/assets/img/testimonial-2.jpg" alt = "Mina Hardwards")
+        //- li.span-1-of-3.--js-testimonial-img
+        //-   img(src="/assets/img/testimonial-3.jpg" alt = "Mina Hardwards")
+        //- li.span-1-of-3.--js-testimonial-img
+        //-   img(src="/assets/img/testimonial-4.jpg" alt = "Mina Hardwards")
+        //- li.span-1-of-3.--js-testimonial-img
+        //-   img(src="/assets/img/testimonial-5.jpg" alt = "Mina Hardwards")
+        //- li.span-1-of-3.--js-testimonial-img
+        //-   img(src="/assets/img/testimonial-6.jpg" alt = "Mina Hardwards")
