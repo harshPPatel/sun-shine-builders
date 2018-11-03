@@ -1,16 +1,19 @@
-//  Variables for JSON Functions for fetching data from the .json file
+/**
+ *  Variables for JSON Functions for fetching data from the .json file
+ */
 var projectsJSONSource = "/assets/js/json/projects.json";
 var upcomingProjectsJSONSource = "/assets/js/json/upcoming-projects.json";
 var testimonialSource = "/assets/js/json/testimonials.json";
 
-//  Function    : printProjectObject
-//  Arguments   : projectObject (an object from JSON file)
-//                classname (to catch working and upcoming projects form HTML)
-//  Variables   : divs        => get class for working or upcoming task
-//                printLayout =>  an template to print data
-//  Description : fetch data from JSON functions and print it in the formate of the provided
-//                template.
-
+/**
+ *  Function      :   printProjectObject
+ *  Arguments     :   projectObject =>  an object from JSON file
+ *                    classname     =>  to catch working and upcoming projects form HTML
+ *  Variables     :   divs          =>  get class for working or upcoming task
+ *                    printLayout   =>  an template to print data
+ *  Description   :   fetch data from JSON functions and print it in the formate of the provided
+ *                    template.
+ */
 function printProjectObject(projectObject, classname) {
   var divs = document.getElementsByClassName(classname);
   for (var i = 0; i < divs.length; i++) {
@@ -24,14 +27,15 @@ function printProjectObject(projectObject, classname) {
   }
 }
 
-//  Function    : printTestimonials
-//  Arguments   : projectObject (an object from JSON file)
-//                i             (to catch i^th object in JSON Data)
-//  Variables   : div         => get element by ID of --js-testimonial-content
-//                printLayout =>  an template to print data
-//  Description : fetch data from JSON functions and print it in the formate of the provided
-//                template.
-
+/**
+ *  Function      :   printTestimonials
+ *  Arguments     :   projectObject =>  an object from JSON file
+ *                    i             =>  to catch i^th object in JSON Data
+ *  Variables     :   div           =>  get element by ID of '--js-testimonial-content'
+ *                    printLayout   =>  an template to print data
+ *  Description   :   fetch data from JSON functions and print it in the formate of the provided
+ *                    template.
+ */
 function printTestimonials(object, i) {
   i = i - 1; //TO convert normal number in 0 base so that will be easy to understand array process
   var div = document.getElementById('--js-testimonial-content');
@@ -42,13 +46,14 @@ function printTestimonials(object, i) {
   div.innerHTML = printLayout;
 }
 
-//  Function    : getProjectData
-//  Arguments   : none
-//  Variables  :  xhttp        => creates new XMLHttpRequest in the function
-//                projectData  => save data in variable from the JSON file
-//  Description : fetch data from projects.json file in the json folder, make and http request,
-//                save it in variable and print the data in provided layout.
-
+/**
+ *  Function      :   getProjectData
+ *  Arguments     :   none
+ *  Variables     :   xhttp         =>  creates new XMLHttpRequest in the function
+ *                    projectData   =>  save data in variable from the JSON file
+ *  Description   :   fetch data from projects.json file in the json folder, make and http request,
+ *                    save it in variable and print the data in provided layout.
+ */
 function getProjectData() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -61,13 +66,14 @@ function getProjectData() {
   xhttp.send();
 }
 
-//  Function    : getUpcomingProjectData
-//  Arguments   : none
-//  Variables  :  xhttp                 => creates new XMLHttpRequest in the function
-//                upcomingProjectData   => save data in variable from the JSON file
-//  Description : fetch data from upcoming-projects.json file in the json folder, make and http request,
-//                save it in variable and print the data in provided layout.
-
+/**
+ *  Function      :   getUpcomingProjectData
+ *  Arguments     :   none
+ *  Variables     :   xhttp                 =>  creates new XMLHttpRequest in the function
+ *                    upcomingProjectData   =>  save data in variable from the JSON file
+ *  Description   :   fetch data from upcoming-projects.json file in the json folder, make and http request,
+ *                    save it in variable and print the data in provided layout.
+ */
 function getUpcomingProjectData() {
 
   var xhttp = new XMLHttpRequest();
@@ -81,13 +87,14 @@ function getUpcomingProjectData() {
   xhttp.send();
 }
 
-//  Function    : getTestimonials
-//  Arguments   : i                     => represents number of the testimonial-img in the HTML
-//  Variables  :  xhttp                 => creates new XMLHttpRequest in the function
-//                testimonialObject     => save data in variable from the JSON file
-//  Description : fetch data from upcoming-projects.json file in the json folder, make and http request,
-//                save it in variable and print the data in provided layout.
-
+/**
+ *  Function      :   getTestimonials
+ *  Arguments     :   i                     =>  represents number of the testimonial-img in the HTML
+ *  Variables     :   xhttp                 =>  creates new XMLHttpRequest in the function
+ *                    testimonialObject     =>  save data in variable from the JSON file
+ *  Description   :   fetch data from upcoming-projects.json file in the json folder, make and http request,
+ *                    save it in variable and print the data in provided layout.
+ */
 function getTestimonials(i) {
 
   var xhttp = new XMLHttpRequest();

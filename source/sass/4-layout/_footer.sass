@@ -1,0 +1,24 @@
+footer
+  background: url($hero-bg)
+  +background-center
+  .wrapper
+    padding: 50px 0
+    background-color: rgba(0,0,0,0.5)
+  .footer-wrapper
+    display: flex
+    align-items: center
+    .copyright
+      margin-left: auto
+      text-align: right
+      text-transform: uppercase
+      color: $white-color
+      font-size: 0.6em
+      letter-spacing: 2px
+      font-family: $josefin-font-family
+      opacity: 0.7
+      line-height: 2
+      a
+        color: $white-color
+        +transition(all, 0.2s, ease)
+        &:hover
+          opacity: 0.8
