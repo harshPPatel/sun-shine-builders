@@ -1,3 +1,5 @@
+- var projectName = ['Royal Business Center', 'KYC Night Club'];
+- var upcomingProjectName = ['Govt. Public Library', ''];
 - var projectNumbers = 2;
 - var counter = 0;
 - var upcomingProjectNumbers = 1;
@@ -10,7 +12,7 @@ section.project-section#projects
   while counter < projectNumbers
     .row.project-container
       .col.span-1-of-3
-        img.project-image(src="/assets/img/project-" + ++counter + ".jpg")
+        img.project-image(src="/assets/img/project-" + ++counter + ".jpg" alt= projectName[counter - 1])
       .col.span-2-of-3.project-details.--js-isWorking
     
   .row.upcoming-row
@@ -19,5 +21,5 @@ section.project-section#projects
   while counter2 < upcomingProjectNumbers
     .row.project-container
       .col.span-1-of-3
-        img.project-image(src="/assets/img/upcoming-project-" + ++counter2 + ".jpg")
+        img.project-image(src="/assets/img/upcoming-project-" + ++counter2 + ".jpg" alt= upcomingProjectName[counter2 - 1])
       .col.span-2-of-3.project-details.--js-isUpcoming
