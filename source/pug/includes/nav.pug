@@ -1,14 +1,16 @@
 - var navLinks = ['Home', 'About Us', 'Projects', 'Team', 'Testimonials'];
+- var navIDs = ['header', 'about', 'projects', 'team', 'testimonials'];
 
 nav
   .row
     .logo
-      include icons/logo.html
+      a(href="#header")
+        include icons/logo.html
   
     ul.nav-main
-      each val in navLinks
+      each val,index in navLinks
         li.nav-item
-          a.nav-links(href="#")= val
+          a.nav-links(href="#" + navIDs[index])= val
     
     #toggle
       .span#one

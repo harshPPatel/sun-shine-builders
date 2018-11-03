@@ -1,10 +1,11 @@
 - var navLinks = ['Home', 'About Us', 'Projects', 'Team', 'Testimonials'];
 
-footer
+footer#footer
   article.wrapper
     .row.footer-wrapper
       .logo
-        include icons/logo.html
+        a(href="#header")
+          include icons/logo.html
       
       p.copyright
         | Copyrighted, March 2018 
