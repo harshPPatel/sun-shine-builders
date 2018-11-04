@@ -4,9 +4,14 @@ footer
   .wrapper
     padding: 50px 0
     background-color: rgba(0,0,0,0.5)
+    @media (max-width: 535px)
+      padding: 30px 0
   .footer-wrapper
     display: flex
     align-items: center
+    @media(max-width: 675px)
+      display: block
+      text-align: center
     .copyright
       margin-left: auto
       text-align: right
@@ -17,6 +22,11 @@ footer
       font-family: $josefin-font-family
       opacity: 0.7
       line-height: 2
+      @media(max-width: 675px)
+        text-align: center
+        margin-top: 40px
+      @media (max-width: 535px)
+        margin-top: 30px
       a
         color: $white-color
         +transition(all, 0.2s, ease)

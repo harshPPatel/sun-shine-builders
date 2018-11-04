@@ -1,5 +1,6 @@
 header
   height: 100vh
+  min-height: 550px
   margin-top: -80px
   color: $white-color
   +flex(row)
@@ -8,7 +9,12 @@ header
   background-image: url($hero-bg)
   +background-center
   +text-shadow(0, 3px, 6px, rgba(0,0,0,0.4))
-
+  @media(max-width: 475px)
+    .row
+      width: 100%
+    .btn-wrapper
+      .btn-solid
+        margin-bottom: 20px
   h1, h4
     color: $white-color
 
@@ -16,13 +22,25 @@ header
     color: $white-color!important
     margin-top: -20px
     &::after
-      display: none  
+      display: none
   p
     width: 50%
     margin: 40px auto
+    @media(max-width: 675px)
+      width: 70%
+    @media(max-width: 535px)
+      width: 90%
 
 .btn-wrapper
   .btn
     display: inline-block
+    &:first-of-type
+      margin-right: 30px
+  @media(max-width: 475px)
+    .btn
+      display: block
+      margin: 0 auto
+    .btn-solid
+      margin: 0 auto
     &:first-of-type
       margin-right: 20px

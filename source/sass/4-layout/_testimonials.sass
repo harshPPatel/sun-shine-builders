@@ -6,6 +6,8 @@
     bottom: 20px
     color: $white-color
     font-style: italic
+    @media(max-width: 475px)
+      margin: 0
   h2
     color: $white-color
     &::after
@@ -59,7 +61,15 @@
       img
         height: 125px
         width: 125px
-
+  @media(max-width: 535px)
+    .testimonial-content
+      flex-direction: column
+      padding: 25px 5px
+      img
+        margin-bottom: 15px
+      blockquote,
+      .name
+        font-size: 1.2em
 //Testimonal List styling
 .testimonial-list
   display: flex
@@ -79,7 +89,15 @@
     img
       height: 100px
       width: 100px
-
+  @media(max-width: 535px)
+    margin-top: 20px
+    padding-left: 0
+    padding: 20px
+    padding-bottom: 0
+  @media(max-width: 475px)
+    .span-1-of-3
+      width: 50%
+      text-align: center
 .active
   img
     border: solid 4px $secondary-color

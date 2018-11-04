@@ -3,3 +3,12 @@
   .col.span-1-of-3
     box-sizing: border-box
     padding: 10px
+    @media(max-width: 675px)
+      float: none
+      margin: 0 auto
+      width: 40%
+      margin-bottom: 40px
+      &:last-of-type
+        margin-bottom: 0
+    @media(max-width: 535px)
+      width: 100%

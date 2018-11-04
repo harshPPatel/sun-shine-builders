@@ -9,6 +9,8 @@
   .col, .span-1-of-2
     box-sizing: border-box
     margin: 0
+    @media (max-width: 675px)
+      width: 100%
     p
       margin: 30px 0
       @media(max-width: 775px)
@@ -26,9 +28,10 @@
   background-color: $white-color
   position: relative
   overflow: hidden
+  @media (max-width: 675px)
+    width: 100%
 
   .skill-fill
-    width: 80%
     position: absolute
     top: 0
     left: 0

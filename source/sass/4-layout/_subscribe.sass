@@ -17,6 +17,8 @@
 
   .subscribe-form
     margin-top: 20px
+    @media(max-width: 675px)
+      text-align: center
 
   input[type="email"],
   input[type="submit"]
@@ -29,6 +31,8 @@
     +transition(all, 0.3s, ease)
     @media(max-width: 775px)
       height: 40px
+    @media (max-width: 675px)
+      display: block
     &:focus,
     &:hover
       +box-shadow(1px, 1px, 10px, 0, $secondary-color)
@@ -43,7 +47,14 @@
       margin-right: 30px
     @media(max-width: 775px)
       width: 50%
+    @media(max-width: 675px)
+      margin: 15px auto
+      width: 80%
+    @media(max-width: 535px)
+      width: 100%
 
   input[type="submit"].btn
     width: 150px
     background-color: $secondary-color
+    @media(max-width: 675px)
+      margin: 20px auto 0

@@ -8,6 +8,8 @@
     height: 150px
     width: 150px
     border-radius: 50%
+    @media (max-width: 675px)
+      margin-bottom: 25px
 
   h4
     &::after
@@ -30,6 +32,9 @@
     @media(max-width: 775px)
       padding: 0
       text-align: center
+    @media(max-width: 535px)
+      width: 50%
+      margin: 30px auto
     li
       display: inline-block
       width: 50%
@@ -54,6 +59,9 @@
           width: 15px
     @media(max-width: 775px)
       font-size: 0.9em
+    @media(max-width: 675px)
+      font-size: 1em
+      justify-content: center
     &:hover
       opacity: 0.9
     svg

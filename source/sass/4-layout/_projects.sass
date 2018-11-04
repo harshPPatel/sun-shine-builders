@@ -13,6 +13,8 @@
     overflow: hidden
     @media(max-width: 775px)
       height: 250px
+    @media (max-width: 675px)
+      width: 100%
     img
       transform: scale(1.1)
       height: 100%
@@ -24,6 +26,13 @@
     height: 300px
     @media(max-width: 775px)
       height: 250px
+    @media (max-width: 675px)
+      text-align: center
+      width: 100%
+      padding-left: 0
+      padding: 0 30px
+      .btn
+        display: inline-block
     +flex(row)
     section
       padding: 0
