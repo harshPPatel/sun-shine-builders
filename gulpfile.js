@@ -49,6 +49,9 @@ gulp.task('pug', function() {
 gulp.task('pugCopy', function () {
   return gulp.src('source/pug/*.html')
     .pipe(plumber())
+    .pipe(htmlmin({
+      collapseWhitespace: true
+    }))
     .pipe(gulp.dest(htmlDestination));
 })
 
