@@ -40,6 +40,30 @@ $(document).ready(function() {
    */
   $('.--js-testimonial-img').first().click();
 
+  $(window).scroll(function() {
+    var scroll = $(window).scrollTop();
+    if (scroll >= 100) {
+        $("nav").addClass("sticky");
+        $("#toggle").addClass("sticky-toggle");
+
+    } else {
+        $("nav").removeClass("sticky");
+        $("#toggle").removeClass("sticky-toggle");
+    }
+  });
+
+  $('.js--mobile-navlinks').click(function () {
+    $('#resize').removeClass('active');
+    $('#toggle').removeClass('on');
+    $('html').toggleClass("--js-html-overflow");
+  });
+
+  $("#toggle").click(function(){
+    $(this).toggleClass('on');
+    $("#resize").toggleClass("active");
+    $('html').toggleClass("--js-html-overflow");
+  });
+
 });
 
 /**
