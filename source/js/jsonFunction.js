@@ -1,9 +1,9 @@
 /**
  *  Variables for JSON Functions for fetching data from the .json file
  */
-var projectsJSONSource = "/assets/js/json/projects.json";
-var upcomingProjectsJSONSource = "/assets/js/json/upcoming-projects.json";
-var testimonialSource = "/assets/js/json/testimonials.json";
+var projectsJSONSource = "assets/js/json/projects.json";
+var upcomingProjectsJSONSource = "assets/js/json/upcoming-projects.json";
+var testimonialSource = "assets/js/json/testimonials.json";
 
 /**
  *  Function      :   printProjectObject
@@ -39,7 +39,7 @@ function printProjectObject(projectObject, classname) {
 function printTestimonials(object, i) {
   i = i - 1; //TO convert normal number in 0 base so that will be easy to understand array process
   var div = document.getElementById('--js-testimonial-content');
-  var printLayout = '<img src=\" /assets/img/testimonial-' + (i + 1) + '.jpg\"' +
+  var printLayout = '<img src=\" assets/img/testimonial-' + (i + 1) + '.jpg\"' +
   'alt=\"' + object[i].name + '"/>' +
   '<article><blockquote>' + object[i].testimonial + '</blockquote><p class=\"name\">' +
   object[i].name + '</p></article>'
