@@ -81,11 +81,16 @@ function onLoadFunctions () {
 }
 
 /**
- *  Start Animation On Scroll Function
+ *  Start Animation On Scroll Function for desktop.
  */
-
-AOS.init();
-
+var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+var height = (window.innerHeight > 0) ? window.innerHeight : screen.height;
+if (width < 775 || height < 600){
+  AOS.init({disable: true, offset: 150});
+}
+else {
+  AOS.init();
+}
 /**
  *  Runs onLoadFunctions while page loads
  */

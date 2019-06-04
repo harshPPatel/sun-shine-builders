@@ -11,10 +11,8 @@ var gulp          = require('gulp'),
     browserSync   = require('browser-sync'),
     pug           = require('gulp-pug');
 
-var htmlSource = 'source/*.html',
-    htmlDestination = 'build/',
-    jekyllHtmlSource = 'website/*.html',
-    pugSource = 'source/pug/**/*.pug',
+var htmlDestination = 'build/',
+    pugSource = 'source/pug/*.pug',
     cssVendorSource = 'source/css/*.css',
     sassSource = 'source/sass/**/*.sass',
     cssDestination = 'build/assets/css/',
@@ -28,41 +26,16 @@ var htmlSource = 'source/*.html',
     faviconSource = 'source/favicon/*',
     faviconDestination = 'build/assets/favicon/';
 
-//Copy Jekyll File to source folder
-gulp.task('jekyll', function() {
-    gulp.src(jekyllHtmlSource)
-     .pipe(plumber())
-     .pipe(htmlmin({
-        collapseWhitespace: true
-     }))
-     .pipe(gulp.dest('source/'));
-})
-
 //pug Task
 gulp.task('pug', function() {
   return gulp.src(pugSource)
     .pipe(pug())
-    .pipe(gulp.dest('source/pug'));
-})
-
-//copy pug file to source folder
-gulp.task('pugCopy', function () {
-  return gulp.src('source/pug/*.html')
-    .pipe(plumber())
     .pipe(htmlmin({
-      collapseWhitespace: true
+      collapseWhitespace: true,
+      minifyCSS: true,
+      minifyJS: true,
     }))
     .pipe(gulp.dest(htmlDestination));
-})
-
-// html minify and copy to build folder
-gulp.task('html', function() {
-  gulp.src(htmlSource)
-    .pipe(plumber())
-    .pipe(htmlmin({
-      collapseWhitespace: true
-    }))
-    .pipe(gulp.dest(htmlDestination))
 })
 
 //Minify Vendor Css and Concat them
@@ -96,11 +69,11 @@ gulp.task('sass', function() {
 //vendor js
 gulp.task('vendorjs', function (cb) {
   pump([
-        gulp.src(jsVendorSource),
-        plumber(),
-        concat('vendors.js'),
-        uglify(),
-        gulp.dest(jsDestination)
+      gulp.src(jsVendorSource),
+      plumber(),
+      concat('vendors.js'),
+      uglify(),
+      gulp.dest(jsDestination)
     ],
     cb
   );
@@ -115,11 +88,11 @@ gulp.task('json', function() {
 //app js
 gulp.task('appjs', function (cb) {
   pump([
-        gulp.src(jsAppSource),
-        plumber(),
-        concat('app.js'),
-        uglify(),
-        gulp.dest(jsDestination)
+      gulp.src(jsAppSource),
+      plumber(),
+      concat('app.js'),
+      uglify(),
+      gulp.dest(jsDestination)
       ],
     cb
   );
@@ -150,10 +123,7 @@ gulp.task('watch', function () {
     notify: false
   });
 
-  gulp.watch(jekyllHtmlSource, ['jekyll']);
   gulp.watch(pugSource, ['pug']);
-  gulp.watch('source/pug/*.html', ['pugCopy']);
-  gulp.watch(htmlSource, ['html']);
   gulp.watch(cssVendorSource, ['minify-css']);
   gulp.watch(jsVendorSource, ['vendorjs']);
   gulp.watch(jsAppSource, ['appjs']);
@@ -171,16 +141,5 @@ gulp.task('watch', function () {
   ]).on('change', browserSync.reload);
 })
 
-
 // Gulp Default Task
-gulp.task('default', ['jekyll', 'pug', 'pugCopy', 'html', 'minify-css', 'json',  'vendorjs', 'appjs', 'img-minify', 'favicon', 'sass', 'watch']);
-
-
-//To use Jekyll,
-// open project in cmd/terminal
-// run 'jekyll new website'
-// it will create website folder(it is already ignored in .gitignore)
-// now open another cmd window and go to website directory and run jekyll there
-// now open previous window and now run gulp here and this will run your jekyll with Gulp
-// as in this gulp, jekyll is only building html files,it is not compiling sass files, it will not take too much space.
-// But this set up is not suitable for blogs it is only for that if you want to create 4 or 5 html pages
+gulp.task('default', ['pug', 'minify-css', 'json',  'vendorjs', 'appjs', 'img-minify', 'favicon', 'sass', 'watch']);
