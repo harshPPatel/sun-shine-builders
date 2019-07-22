@@ -1,0 +1,10 @@
+{
+  "name": "sun-shine-builders",
+  "version": 2,
+  "builds": [
+    {
+      "src": "build/**",
+      "use": "@now/static"
+    }
+  ]
+}
