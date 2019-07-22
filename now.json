@@ -6,5 +6,6 @@
       "src": "build/**",
       "use": "@now/static"
     }
-  ]
+  ],
+  "routes": [{ "src": "/(.*)", "dest": "public/$1" }]
 }
