@@ -7,5 +7,5 @@
       "use": "@now/static"
     }
   ],
-  "routes": [{ "src": "/(.*)", "dest": "public/$1" }]
+  "routes": [{ "src": "/(.*)", "dest": "build/$1" }]
 }
